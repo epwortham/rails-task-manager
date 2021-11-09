@@ -2,12 +2,16 @@
   <h1>All tasks</h1>
   <ul class="cards">
     <% @tasks.each do |task| %>
-      <div class="d-flex">
+
         <p><li><%= link_to task.title, task_path(task) %></li></p>
-        <%= link_to 'delete', task_path(task), method: :delete %>
-      </div>
+        <div class="btn btn-success btn-sm">
+          <%= link_to 'delete', task_path(task), method: :delete, :class => "btn" %>
+        </div>
+
     <% end %>
   </ul>
 
-  <%= link_to 'Add a new task', new_task_path, class: "btn btn-primary" %>
+  <div class="btn btn-success">
+    <%= link_to 'Add a new task', new_task_path, :class => "btn" %>
+  </div>
 </div>
