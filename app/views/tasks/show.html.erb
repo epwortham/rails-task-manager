@@ -1,6 +1,8 @@
 <div class="container">
   <h2><%= @task.title %></h2>
   <p><%= @task.details %></p>
-  <p><%= @task.completed %></p>
+  <input type="checkbox" name="completed" value="@task.completed"> completed<br>
+
+  <p><%= link_to 'Edit', edit_task_path %></p>
   <p><%= link_to 'Back to all your tasks', tasks_path %></p>
 </div>
